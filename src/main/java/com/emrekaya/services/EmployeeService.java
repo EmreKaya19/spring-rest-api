@@ -17,4 +17,8 @@ public List<employee> getAllEmployeeList(){
 return	employeeRepository.getAEmployeeList();
 	 
 }
+
+public employee getEmployeebyİD(String id) {
+	return employeeRepository.getEmployeebyİD(id);
+}
 }
