@@ -21,4 +21,8 @@ return	employeeRepository.getAEmployeeList();
 public employee getEmployeebyİD(String id) {
 	return employeeRepository.getEmployeebyİD(id);
 }
+
+public List<employee> gEmployeeWithParams(String firstName , String lastName){
+	return employeeRepository.getEmployeeWithParams(firstName, lastName);
+}
 }

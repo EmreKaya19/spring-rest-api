@@ -1,5 +1,6 @@
 package com.emrekaya.repository;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,6 +31,37 @@ public employee getEmployeebyİD(String id) {
 	
 	return Findemployee;
 }
+
+public List<employee> getEmployeeWithParams(String firstName , String lastName){
+	List<employee> getEmployeeWithParams = new ArrayList<>();	
+	if (firstName==null && lastName==null) {
+		return employeeList;
+		
+	}
+	
+	for (employee employee : employeeList) {
+		if (firstName!=null && lastName!=null) {
+			if (employee.getFirstName().equalsIgnoreCase(firstName)&& employee.getLastName().equalsIgnoreCase(lastName)) {
+				getEmployeeWithParams.add(employee);
+			}
+			
+		}
+		if (firstName!=null && lastName==null) {
+			if (employee.getFirstName().equalsIgnoreCase(firstName)) {
+				getEmployeeWithParams.add(employee);
+			}
+			
+		}
+		if (firstName==null && lastName!=null) {
+			if (employee.getLastName().equalsIgnoreCase(lastName)) {
+				getEmployeeWithParams.add(employee);
+			}
+			
+		}
+	}
+	return getEmployeeWithParams;
+}
+
 
 
 }

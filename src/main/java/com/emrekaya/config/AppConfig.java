@@ -18,7 +18,8 @@ public class AppConfig {
 		employeeList.add(new employee("3","cemal","kaya"));
 		employeeList.add(new employee("4","öznur","kaya"));
 		employeeList.add(new employee("5","halime","kaya"));
-		
+		employeeList.add(new employee("6","emre","kara"));
+
 		return employeeList;
 
 	}
