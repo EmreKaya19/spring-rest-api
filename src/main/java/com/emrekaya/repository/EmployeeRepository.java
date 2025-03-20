@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.emrekaya.model.employee;
+import com.emrekaya.model.updateEmployeeRequest;
 
 @Repository
 public class EmployeeRepository {
@@ -86,8 +87,33 @@ public boolean deleteEmployee(String id) {
 	return true;
 }
 
-
-
+private employee findEmployeebyid(String id) {
+	employee findEmploye =null;
+	for (employee employee : employeeList) {
+		if (employee.getId().equals(id)) {
+			findEmploye =employee;
+			break;
+		}
+		
+	}
+	return findEmploye;
+	
+}
+public employee updateEmployee(String id , updateEmployeeRequest request) {
+	employee findEmployee= findEmployeebyid(id);
+	if (findEmployee!=null) {
+		deleteEmployee(id);
+		employee updatedEmployee=new employee();
+		updatedEmployee.setId(id);
+		updatedEmployee.setFirstName(request.getFirstName());
+		updatedEmployee.setLastName(request.getLastName());
+		
+		employeeList.add(updatedEmployee);
+		return updatedEmployee;
+	}
+	return null;
+	
+}
 
 
 
