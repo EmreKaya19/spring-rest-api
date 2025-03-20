@@ -63,5 +63,41 @@ public List<employee> getEmployeeWithParams(String firstName , String lastName){
 }
 
 
+public employee saveEmployee(employee newEmployee) {
+	employeeList.add(newEmployee);
+	return newEmployee;
+}
+
+
+
+public boolean deleteEmployee(String id) {
+	employee deleteEmployee=null;
+	
+	for (employee employee : employeeList) {
+		if (id.equals(employee.getId())) {
+			deleteEmployee=employee;
+		}
+		
+	}
+	if (deleteEmployee==null) {
+		return false;
+	}
+	employeeList.remove(deleteEmployee);
+	return true;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 }

@@ -25,4 +25,15 @@ public employee getEmployeebyİD(String id) {
 public List<employee> gEmployeeWithParams(String firstName , String lastName){
 	return employeeRepository.getEmployeeWithParams(firstName, lastName);
 }
+
+
+public employee saveEmployee (employee newEmployee) {
+	return employeeRepository.saveEmployee(newEmployee);
+}
+
+public boolean deleteEmployee(String id) {
+	return employeeRepository.deleteEmployee(id);
+}
+
+
 }
